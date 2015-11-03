@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+
+/**
+ * Olark chat widget admin, ACL configuration.
+ *
+ * PHP Version 5
+ *
+ * @package   Vbuck_OlarkChat
+ * @author    Rick Buczynski <me@rickbuczynski.com>
+ * @copyright 2015 Rick Buczynski
+ */
+
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <olark translate="title" module="olark_chat">
+                                        <title><![CDATA[Olark Integrations]]></title>
+                                    </olark>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

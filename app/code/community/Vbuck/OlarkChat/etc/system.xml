@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!--
+
+/**
+ * Olark chat widget module system configuration.
+ *
+ * PHP Version 5
+ *
+ * @package   Vbuck_OlarkChat
+ * @author    Rick Buczynski <me@rickbuczynski.com>
+ * @copyright 2015 Rick Buczynski
+ */
+
+-->
+<config>
+    <tabs>
+        <olark translate="label" module="olark_chat">
+            <label><![CDATA[Olark Integrations]]></label>
+            <sort_order>99990</sort_order>
+        </olark>
+    </tabs>
+    <sections>
+        <olark translate="label" module="olark_chat">
+            <label><![CDATA[Chat Widget]]></label>
+            <tab>olark</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>50</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <chat_widget translate="label">
+                    <label><![CDATA[Settings]]></label>
+                    <sort_order>25</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label><![CDATA[Enabled]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <olark_id translate="label">
+                            <label><![CDATA[Olark ID]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </olark_id>
+                        <visitor_recognition translate="label comment">
+                            <label><![CDATA[Visitor Recognition]]></label>
+                            <frontend_type>select</frontend_type>
+                            <comment><![CDATA[When enabled, the visitor name and e-mail address, if available, will be used to intiate the chat session.]]></comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </visitor_recognition>
+                        <position translate="label">
+                            <label><![CDATA[Widget Position]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>olark_chat/system_config_source_position</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </position>
+                        <start_expanded translate="label">
+                            <label><![CDATA[Start Expanded]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </start_expanded>
+                        <script_template translate="label comment">
+                            <label><![CDATA[Script Template]]></label>
+                            <frontend_type>textarea</frontend_type>
+                            <comment><![CDATA[Paste your embed code here. Supports custom variables.]]></comment>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </script_template>
+                        <excluded_handles translate="label comment">
+                            <label><![CDATA[Excluded Handles]]></label>
+                            <frontend_type>textarea</frontend_type>
+                            <comment><![CDATA[Prevents the widget from being displayed on these pages. Enter one full layout handle per line.]]></comment>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </excluded_handles>
+                    </fields>
+                </chat_widget>
+            </groups>
+        </olark>
+    </sections>
+</config>

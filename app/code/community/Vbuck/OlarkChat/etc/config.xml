@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!--
+
+/**
+ * Olark chat widget module configuration.
+ *
+ * PHP Version 5
+ *
+ * @package   Vbuck_OlarkChat
+ * @author    Rick Buczynski <me@rickbuczynski.com>
+ * @copyright 2015 Rick Buczynski
+ */
+
+-->
+<config>
+    <modules>
+        <Vbuck_OlarkChat>
+            <version>1.0.0</version>
+        </Vbuck_OlarkChat>
+    </modules>
+    <default>
+        <olark>
+            <chat_widget>
+                <enable>1</enable>
+                <olark_id></olark_id>
+                <visitor_recognition>1</visitor_recognition>
+                <position>BR</position>
+                <start_expanded>0</start_expanded>
+                <script_template><![CDATA[
+<!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>
+window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+
+{{var custom_config}}
+
+olark.identify('{{var olark_id}}');</script><noscript><a href="https://www.olark.com/site/{{var olark_id}}/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+<!-- end olark code -->]]></script_template>
+                <excluded_handles></excluded_handles>
+            </chat_widget>
+        </olark>
+    </default>
+    <global>
+        <helpers>
+            <olark_chat>
+                <class>Vbuck_OlarkChat_Helper</class>
+            </olark_chat>
+        </helpers>
+        <blocks>
+            <olark_chat>
+                <class>Vbuck_OlarkChat_Block</class>
+            </olark_chat>
+        </blocks>
+        <models>
+            <olark_chat>
+                <class>Vbuck_OlarkChat_Model</class>
+            </olark_chat>
+        </models>
+    </global>
+    <adminhtml>
+        <translate>
+            <modules>
+                <olark_chat>
+                    <files>
+                        <default>Vbuck_OlarkChat.csv</default>
+                    </files>
+                </olark_chat>
+            </modules>
+        </translate>
+    </adminhtml>
+    <frontend>
+        <layout>
+            <updates>
+                <olark_chat>
+                    <file>olark_chat.xml</file>
+                </olark_chat>
+            </updates>
+        </layout>
+    </frontend>
+</config>

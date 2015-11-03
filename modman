@@ -1,0 +1,4 @@
+app/etc/modules/Vbuck_OlarkChat.xml                     app/etc/modules/Vbuck_OlarkChat.xml
+app/locale/en_US/Vbuck_OlarkChat.csv                    app/locale/en_US/Vbuck_OlarkChat.csv
+app/code/community/Vbuck/OlarkChat                      app/code/community/Vbuck/OlarkChat
+app/design/frontend/base/default/layout/olark_chat.xml  app/design/frontend/base/default/layout/olark_chat.xml

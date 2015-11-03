@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+
+/**
+ * Olark chat widget layout configuration.
+ *
+ * PHP Version 5
+ *
+ * @package   Vbuck_OlarkChat
+ * @author    Rick Buczynski <me@rickbuczynski.com>
+ * @copyright 2015 Rick Buczynski
+ */
+
+-->
+<layout>
+    <default>
+        <reference name="before_body_end">
+            <block type="olark_chat/widget" name="olark.chat.widget" />
+        </reference>
+    </default>
+</layout>
